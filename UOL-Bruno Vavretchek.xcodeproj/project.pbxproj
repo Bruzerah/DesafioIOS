@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64D1768720FFC19D00D3D868 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D1768620FFC19D00D3D868 /* ViewController.swift */; };
 		64E0DE5C20FFBD790061E70B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E0DE5B20FFBD790061E70B /* AppDelegate.swift */; };
-		64E0DE5E20FFBD790061E70B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E0DE5D20FFBD790061E70B /* ViewController.swift */; };
 		64E0DE6120FFBD790061E70B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64E0DE5F20FFBD790061E70B /* Main.storyboard */; };
 		64E0DE6320FFBD980061E70B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64E0DE6220FFBD980061E70B /* Assets.xcassets */; };
 		64E0DE6620FFBD980061E70B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64E0DE6420FFBD980061E70B /* LaunchScreen.storyboard */; };
 		64E0DE7120FFBD9C0061E70B /* UOL_Bruno_VavretchekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E0DE7020FFBD9C0061E70B /* UOL_Bruno_VavretchekTests.swift */; };
+		64E0DE8020FFBE4C0061E70B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E0DE7B20FFBE4A0061E70B /* TableViewCell.swift */; };
+		64E0DE8120FFBE4C0061E70B /* TableViewDetalhes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E0DE7C20FFBE4B0061E70B /* TableViewDetalhes.swift */; };
+		64E0DE8220FFBE4C0061E70B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E0DE7D20FFBE4B0061E70B /* Networking.swift */; };
+		64E0DE8320FFBE4C0061E70B /* Bebidas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E0DE7E20FFBE4C0061E70B /* Bebidas.swift */; };
+		C4EEB91E9E1347B2BA990D8A /* Pods_UOL_Bruno_Vavretchek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D23739DB753F8C0A1FE5F94 /* Pods_UOL_Bruno_Vavretchek.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,9 +31,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		386ABAC1D1E64F188750576F /* Pods-UOL-Bruno Vavretchek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UOL-Bruno Vavretchek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UOL-Bruno Vavretchek/Pods-UOL-Bruno Vavretchek.debug.xcconfig"; sourceTree = "<group>"; };
+		6419B6115649A120E00601C1 /* Pods-UOL-Bruno Vavretchek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UOL-Bruno Vavretchek.release.xcconfig"; path = "Pods/Target Support Files/Pods-UOL-Bruno Vavretchek/Pods-UOL-Bruno Vavretchek.release.xcconfig"; sourceTree = "<group>"; };
+		64D1768620FFC19D00D3D868 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		64E0DE5820FFBD790061E70B /* UOL-Bruno Vavretchek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UOL-Bruno Vavretchek.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64E0DE5B20FFBD790061E70B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		64E0DE5D20FFBD790061E70B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		64E0DE6020FFBD790061E70B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64E0DE6220FFBD980061E70B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64E0DE6520FFBD980061E70B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +43,11 @@
 		64E0DE6C20FFBD9C0061E70B /* UOL-Bruno VavretchekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UOL-Bruno VavretchekTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64E0DE7020FFBD9C0061E70B /* UOL_Bruno_VavretchekTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UOL_Bruno_VavretchekTests.swift; sourceTree = "<group>"; };
 		64E0DE7220FFBD9C0061E70B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64E0DE7B20FFBE4A0061E70B /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		64E0DE7C20FFBE4B0061E70B /* TableViewDetalhes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDetalhes.swift; sourceTree = "<group>"; };
+		64E0DE7D20FFBE4B0061E70B /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		64E0DE7E20FFBE4C0061E70B /* Bebidas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bebidas.swift; sourceTree = "<group>"; };
+		6D23739DB753F8C0A1FE5F94 /* Pods_UOL_Bruno_Vavretchek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UOL_Bruno_Vavretchek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4EEB91E9E1347B2BA990D8A /* Pods_UOL_Bruno_Vavretchek.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +69,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64D1768320FFC18100D3D868 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				64E0DE7E20FFBE4C0061E70B /* Bebidas.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		64D1768420FFC18800D3D868 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				64D1768620FFC19D00D3D868 /* ViewController.swift */,
+				64E0DE7C20FFBE4B0061E70B /* TableViewDetalhes.swift */,
+				64E0DE7B20FFBE4A0061E70B /* TableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		64D1768520FFC18E00D3D868 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				64E0DE7D20FFBE4B0061E70B /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		64E0DE4F20FFBD790061E70B = {
 			isa = PBXGroup;
 			children = (
 				64E0DE5A20FFBD790061E70B /* UOL-Bruno Vavretchek */,
 				64E0DE6F20FFBD9C0061E70B /* UOL-Bruno VavretchekTests */,
 				64E0DE5920FFBD790061E70B /* Products */,
+				C53BAD9C9FC475E7127D88F4 /* Pods */,
+				F2E6DD4B75A6955DD26CA8B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,8 +118,10 @@
 		64E0DE5A20FFBD790061E70B /* UOL-Bruno Vavretchek */ = {
 			isa = PBXGroup;
 			children = (
+				64D1768520FFC18E00D3D868 /* Networking */,
+				64D1768420FFC18800D3D868 /* View */,
+				64D1768320FFC18100D3D868 /* Model */,
 				64E0DE5B20FFBD790061E70B /* AppDelegate.swift */,
-				64E0DE5D20FFBD790061E70B /* ViewController.swift */,
 				64E0DE5F20FFBD790061E70B /* Main.storyboard */,
 				64E0DE6220FFBD980061E70B /* Assets.xcassets */,
 				64E0DE6420FFBD980061E70B /* LaunchScreen.storyboard */,
@@ -96,6 +139,23 @@
 			path = "UOL-Bruno VavretchekTests";
 			sourceTree = "<group>";
 		};
+		C53BAD9C9FC475E7127D88F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				386ABAC1D1E64F188750576F /* Pods-UOL-Bruno Vavretchek.debug.xcconfig */,
+				6419B6115649A120E00601C1 /* Pods-UOL-Bruno Vavretchek.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F2E6DD4B75A6955DD26CA8B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D23739DB753F8C0A1FE5F94 /* Pods_UOL_Bruno_Vavretchek.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64E0DE7520FFBD9C0061E70B /* Build configuration list for PBXNativeTarget "UOL-Bruno Vavretchek" */;
 			buildPhases = (
+				5A1234EC15A8DFC130BC8B06 /* [CP] Check Pods Manifest.lock */,
 				64E0DE5420FFBD790061E70B /* Sources */,
 				64E0DE5520FFBD790061E70B /* Frameworks */,
 				64E0DE5620FFBD790061E70B /* Resources */,
+				DD313EFCF2D6B3FD122A206B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,13 +254,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5A1234EC15A8DFC130BC8B06 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UOL-Bruno Vavretchek-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD313EFCF2D6B3FD122A206B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UOL-Bruno Vavretchek/Pods-UOL-Bruno Vavretchek-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UOL-Bruno Vavretchek/Pods-UOL-Bruno Vavretchek-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		64E0DE5420FFBD790061E70B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64E0DE5E20FFBD790061E70B /* ViewController.swift in Sources */,
+				64E0DE8020FFBE4C0061E70B /* TableViewCell.swift in Sources */,
+				64E0DE8220FFBE4C0061E70B /* Networking.swift in Sources */,
 				64E0DE5C20FFBD790061E70B /* AppDelegate.swift in Sources */,
+				64D1768720FFC19D00D3D868 /* ViewController.swift in Sources */,
+				64E0DE8320FFBE4C0061E70B /* Bebidas.swift in Sources */,
+				64E0DE8120FFBE4C0061E70B /* TableViewDetalhes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,15 +465,13 @@
 		};
 		64E0DE7620FFBD9C0061E70B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 386ABAC1D1E64F188750576F /* Pods-UOL-Bruno Vavretchek.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7UALVBXZJS;
 				INFOPLIST_FILE = "UOL-Bruno Vavretchek/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BrunoVavretchek.UOL-Bruno-Vavretchek";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -374,15 +481,13 @@
 		};
 		64E0DE7720FFBD9C0061E70B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6419B6115649A120E00601C1 /* Pods-UOL-Bruno Vavretchek.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7UALVBXZJS;
 				INFOPLIST_FILE = "UOL-Bruno Vavretchek/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BrunoVavretchek.UOL-Bruno-Vavretchek";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -398,11 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7UALVBXZJS;
 				INFOPLIST_FILE = "UOL-Bruno VavretchekTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BrunoVavretchek.UOL-Bruno-VavretchekTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -419,11 +520,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7UALVBXZJS;
 				INFOPLIST_FILE = "UOL-Bruno VavretchekTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BrunoVavretchek.UOL-Bruno-VavretchekTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

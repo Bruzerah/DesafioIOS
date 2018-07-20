@@ -11,14 +11,17 @@ import Kingfisher
 
 var arrCerveja = [Cerveja]()
 
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+  
     @IBOutlet weak var tableView: UITableView!
     
     //TableView DataSource
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrCerveja.count
+       return arrCerveja.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! TableViewCell
         
@@ -26,10 +29,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.labelName.text = model.name
         cell.labelDetail.text = "Teor alcoólico: \(model.abv)"
-        
         let resource = ImageResource(downloadURL: URL(string: "\(model.image_url)")!, cacheKey: model.image_url)
         
-            cell.imageViewCell.kf.setImage(with: resource)
+//        cell.imageViewCell.kf.setImage(with: resource)
+        cell.imageViewCell.kf.setImage(with: resource, placeholder: UIImage(named: "icons8-hourglass-48"), options: nil, progressBlock: nil, completionHandler: nil)
+    
+        
+        
 
         
         return cell
@@ -55,11 +61,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //SetupNavBarCustom
-        let logo = UIImage(named: "icons8-cerveja-48")
-        let imageView = UIImageView(image:logo)
-        self.navigationItem.titleView = imageView
+        navigationController?.navigationBar.setupNavigationBar()
         
         getApiData { (cerveja) in
            arrCerveja = cerveja
@@ -70,6 +73,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
 }
-
+extension UINavigationBar {
+    func setupNavigationBar() {
+        let titleImageWidth = frame.size.width * 0.32
+        let titleImageHeight = frame.size.height * 0.92
+        var navigationBarIconimageView = UIImageView()
+        if #available(iOS 11.0, *) {
+            navigationBarIconimageView.widthAnchor.constraint(equalToConstant: titleImageWidth).isActive = true
+            navigationBarIconimageView.heightAnchor.constraint(equalToConstant: titleImageHeight).isActive = true
+        } else {
+            navigationBarIconimageView = UIImageView(frame: CGRect(x: 0, y: 0, width: titleImageWidth, height: titleImageHeight))
+        }
+        navigationBarIconimageView.contentMode = .scaleAspectFit
+        navigationBarIconimageView.image = UIImage(named: "icons8-cerveja-48")
+        topItem?.titleView = navigationBarIconimageView
+    }
+}

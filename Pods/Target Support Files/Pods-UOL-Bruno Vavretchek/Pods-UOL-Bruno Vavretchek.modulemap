@@ -1,0 +1,6 @@
+framework module Pods_UOL_Bruno_Vavretchek {
+  umbrella header "Pods-UOL-Bruno Vavretchek-umbrella.h"
+
+  export *
+  module * { export * }
+}

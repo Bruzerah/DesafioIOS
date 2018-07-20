@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import SkeletonView
 
 class TableViewDetalhes: UIViewController {
 
@@ -33,7 +34,7 @@ class TableViewDetalhes: UIViewController {
         labelTagLine.text = item?.tagline
         
         let resource = ImageResource(downloadURL: URL(string: "\(item?.image_url ?? "")")!, cacheKey: item?.image_url)
-        imageDetail.kf.setImage(with: resource)
+        imageDetail.kf.setImage(with: resource, placeholder: UIImage(named: "icons8-hourglass-48"), options: nil, progressBlock: nil, completionHandler: nil)
     }
     
 

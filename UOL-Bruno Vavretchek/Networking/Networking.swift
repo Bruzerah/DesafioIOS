@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import Alamofire
 
-
 func getApiData(completion: @escaping ([Cerveja]) -> ()){
+    
     guard let urlString = URL(string: "https://api.punkapi.com/v2/beers") else {
         print("URL Error")
         return
