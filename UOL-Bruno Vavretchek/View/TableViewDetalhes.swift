@@ -30,7 +30,9 @@ class TableViewDetalhes: UIViewController {
         if let ibu = item!.ibu {
         labelAmargor.text = "\(ibu)"
         }
-        labelTeorAlc.text = "\(item!.abv)"
+        if let abv = item?.abv{
+            labelTeorAlc.text = "\(abv)"
+        }
         labelTagLine.text = item?.tagline
         
         let resource = ImageResource(downloadURL: URL(string: "\(item?.image_url ?? "")")!, cacheKey: item?.image_url)

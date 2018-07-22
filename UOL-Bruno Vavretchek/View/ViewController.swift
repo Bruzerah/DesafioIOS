@@ -19,11 +19,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let model = arrCerveja[indexPath.row]
                 
                 cell.labelName.text = model.name
-                cell.labelDetail.text = "Teor alcoólico: \(model.abv)"
-                let resource = ImageResource(downloadURL: URL(string: "\(model.image_url)")!, cacheKey: model.image_url)
-                
-                cell.imageViewCell.kf.setImage(with: resource, placeholder: UIImage(named: "icons8-hourglass-48"), options: nil, progressBlock: nil, completionHandler: nil)
+        if let abv = model.abv{
+            cell.labelDetail.text = "Teor alcoólico: \(abv)"
+        }
         
+        if let imageurl = model.image_url{
+             let resource = ImageResource(downloadURL: URL(string: "\(imageurl)")!, cacheKey: imageurl)
+            
+            cell.imageViewCell.kf.setImage(with: resource, placeholder: UIImage(named: "icons8-hourglass-48"), options: nil, progressBlock: nil, completionHandler: nil)
+        }
                 return cell
             }
     
