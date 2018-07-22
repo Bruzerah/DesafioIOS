@@ -3,71 +3,34 @@ import Kingfisher
 import Alamofire
 
 var arrCerveja = [Cerveja]()
-var arrBackup = [Cerveja]()
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
     //TableView DataSource
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if Connectivity.isConnectedToInternet {
-            return arrCerveja.count
-        } else {
-            return arrBackup.count
-        }
-        
+         return arrCerveja.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! TableViewCell
         
+                let model = arrCerveja[indexPath.row]
+                
+                cell.labelName.text = model.name
+                cell.labelDetail.text = "Teor alcoólico: \(model.abv)"
+                let resource = ImageResource(downloadURL: URL(string: "\(model.image_url)")!, cacheKey: model.image_url)
+                
+                cell.imageViewCell.kf.setImage(with: resource, placeholder: UIImage(named: "icons8-hourglass-48"), options: nil, progressBlock: nil, completionHandler: nil)
         
-        if Connectivity.isConnectedToInternet {
-            
-            let model = arrCerveja[indexPath.row]
-            
-            cell.labelName.text = model.name
-            cell.labelDetail.text = "Teor alcoólico: \(model.abv)"
-            let resource = ImageResource(downloadURL: URL(string: "\(model.image_url)")!, cacheKey: model.image_url)
-            
-            cell.imageViewCell.kf.setImage(with: resource, placeholder: UIImage(named: "icons8-hourglass-48"), options: nil, progressBlock: nil, completionHandler: nil)
-        
-            return cell
-            
-        } else {
-            do{
-            if let savedData = UserDefaults.standard.value(forKey: "backupSaved") as? Data {
-                arrBackup = try JSONDecoder().decode([Cerveja].self, from: savedData)
-
+                return cell
             }
-            let model = arrBackup[indexPath.row]
-            
-            cell.labelName.text = model.name
-            cell.labelDetail.text = "Teor alcoólico: \(model.abv)"
-            let resource = ImageResource(downloadURL: URL(string: "\(model.image_url)")!, cacheKey: model.image_url)
-            
-            cell.imageViewCell.kf.setImage(with: resource, placeholder: UIImage(named: "icons8-hourglass-48"), options: nil, progressBlock: nil, completionHandler: nil)
-            
-            
-            }catch{print(error)}
-            
-        }
-        return cell
+    
 
-        
-        
-    }
     //TableView Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if Connectivity.isConnectedToInternet {
             performSegue(withIdentifier: "segueId", sender:arrCerveja[indexPath.row])
-        } else {
-            performSegue(withIdentifier: "segueId", sender:arrBackup[indexPath.row])
-        }
-        
-        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -89,7 +52,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func viewDidAppear(_ animated: Bool) {
-       
     }
     
     override func viewDidLoad() {
@@ -98,29 +60,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //SetupNavBarCustom
         navigationController?.navigationBar.setupNavigationBar()
         
-        if Connectivity.isConnectedToInternet {
-            print("Connected")
-            getApiData { (cerveja) in
-                arrCerveja = cerveja
-                //Backup
-                do{
-                    let data = try JSONEncoder().encode(arrCerveja)
-                    
-                    UserDefaults.standard.set(data, forKey: "backupSaved")
-                    //
-                    self.tableView.reloadData()
-                }catch{print(error)
-                }
-            }
-        } else {
-            print("No Internet")
+        if Connectivity.isConnectedToInternet == false {
+        if UserDefaults.standard.value(forKey: "backup") == nil {
+            //Primeiro Uso
+            let alert = UIAlertController(title: "Primeiro Uso", message: "Conecte-se na Internet e atualize a tabela", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Entendi", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            //Criar um action para o alerta
+        }else{
+            //Tentativa Stack
             do{
-                if let savedData = UserDefaults.standard.value(forKey: "backupSaved") as? Data {
-                    arrBackup = try JSONDecoder().decode([Cerveja].self, from: savedData)
-                    self.tableView.reloadData()
-                }
+            if let  savedData = UserDefaults.standard.value(forKey: "backup") as? Data {
+                arrCerveja = try JSONDecoder().decode([Cerveja].self, from: savedData)
+            }
+                self.tableView.reloadData()
             }catch{
                 print(error)
+            }
+            }
+        }else{
+            //TemConexao
+            getApiData { (cerveja) in
+                do{
+                    arrCerveja = cerveja
+                    
+                    let data = try JSONEncoder().encode(arrCerveja)
+                    
+                    UserDefaults.standard.set(data, forKey: "backup")
+                    UserDefaults.standard.synchronize()
+                    
+                    self.tableView.reloadData()
+                }catch{
+                print(error)
+                }
             }
         }
     }
@@ -142,9 +114,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         
         getApiData { (cerveja) in
-            arrCerveja = cerveja}
-        
-        self.tableView.reloadData()
+            arrCerveja = cerveja
+            do{
+            let data = try JSONEncoder().encode(arrCerveja)
+            UserDefaults.standard.set(data, forKey: "backup")
+            UserDefaults.standard.synchronize()
+            }catch{print(error)
+            }
+            self.tableView.reloadData()
+        }
         refreshControl.endRefreshing()
     }
     
