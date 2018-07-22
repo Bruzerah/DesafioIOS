@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Cerveja:Decodable{
+struct Cerveja:Codable{
     let name:String
     let image_url:String
     let description:String
